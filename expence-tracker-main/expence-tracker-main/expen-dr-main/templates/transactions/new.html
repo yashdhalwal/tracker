@@ -1,0 +1,38 @@
+{% extends 'base.html'%}
+{% block content %}
+
+<h1 class="tag-merchant-header">Add a new transaction</h1>
+
+<form class="tran-update-form" action="/transactions" method="post">
+    <div class="tran-update-div">
+        <label for="date">Transaction Date:</label>
+        <input type="date", id="date-input"  name="date" required autofocus>
+    </div>
+    <div class="tran-update-div">
+        <label for="amount">Amount</label>
+        <input type="number" id="transaction-amount" name="amount" required>
+    </div>
+    <div>
+        <label for="merchant">Merchant</label>
+        <select name="merchant" id="transaction-merchant-name">
+            <option value="">--Please select a merchant--</option>
+            {% for merchant in merchants %}
+            <option value="{{merchant.id}}">{{merchant.name}}</option>
+            {% endfor %}
+        </select>
+    </div>
+    <div class="tran-update-div">
+        <label for="tag">Tag</label>
+        <select name="tag" id="transaction-tag-name">
+            <option value="">--Please select a tag--</option>
+            {% for tag in tags %}
+            <option value="{{tag.id}}">{{tag.name}}</option>
+            {% endfor %}
+        </select>
+    </div>
+    <div class="submit-button-div">
+        <button class="button" type="submit">Add Transaction</button>
+    </div>
+</form>
+
+{% endblock %}

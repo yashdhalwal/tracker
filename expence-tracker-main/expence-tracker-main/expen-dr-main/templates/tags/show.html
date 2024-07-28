@@ -1,0 +1,48 @@
+{% extends 'base.html'%}
+{% block content %}
+
+<h1 class="show-header">{{ tag.name }}</h1>
+
+<div class="section-split show-split">
+    <section class="main-info">
+        <div class="table-div">
+            <table>
+                <tr>
+                    <th>Date</th>
+                    <th>Amount</th>
+                    <th>Merchant</th>
+                    <th>Tag</th>
+                    <th colspan="2"> 
+                        <form action="tags/new" class="transaction-new-button">
+                            <button class="button" value="submit">Add Tag</button>
+                        </form>
+                    </th>
+                </tr>
+                {% for transaction in transactions  %}
+                <tr>
+                    <td><a href="/transactions/{{transaction.id}}">{{transaction.date}}</a></td>
+                    <td>£{{transaction.amount}} <a href="merchants/{{transaction.merchant.id}}"></a></td>
+                    <td><a href="/merchants/{{transaction.merchant.id}}">{{transaction.merchant.name}}</a> </td>
+                    <td><a href="/tags/{{transaction.tag.id}}">{{transaction.tag.name}}</a></td>
+                    <td>
+                        <form action="/transactions/{{transaction.id}}/edit">
+                            <button class="button" type="submit">Update</button>
+                        </form>
+                    </td>
+                    <td> 
+                        <form action="/transactions/{{transaction.id}}/delete" method="post">
+                            <button class="button" type="submit">Delete</button>
+                        </form>
+                    </td>
+                </tr>   
+                {% endfor %}
+            </table>
+        </div>
+    </section>
+<section class="tag-merchant-summary summary">
+    <h2 class="expense-statement">Total Amount Spent: {{total_spent}}</h2>
+
+    <section class="graph-space">
+    </section>
+</section>
+{% endblock %}

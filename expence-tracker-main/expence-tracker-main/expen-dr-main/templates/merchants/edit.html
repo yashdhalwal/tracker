@@ -1,0 +1,14 @@
+{% extends 'base.html'%}
+{% block content %}
+
+<h1 class="tag-merchant-header">{{ merchant.name }}</h1>
+
+<form action="/merchants/{{merchant.id}}" method="post">
+    <div class="tag-merchant-update-form">
+        <label for="name">Merchant Name:</label>
+        <input type="text" name="name" required autofocus>
+        <button class="button" type="submit">Update Merchant</button>
+    </div>
+</form>
+
+{% endblock %}

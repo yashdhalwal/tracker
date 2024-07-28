@@ -1,0 +1,13 @@
+{% extends 'base.html'%}
+{% block content %}
+<h1 class="tag-merchant-header">Add a new merchant</h1>
+
+<form action="/merchants" method="post">
+    <div class="tag-merchant-update-form">
+        <label for="name">Merchant Name:</label>
+        <input type="text", id="merchant-name" name="name" placeholder="e.g. Asda" required autofocus>
+        <button class="button" type="submit">Add Merchant</button>
+    </div>
+</form>
+
+{% endblock %}

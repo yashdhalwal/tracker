@@ -1,0 +1,288 @@
+body {
+    background-color: #F6F5F5;
+    padding: 0 0 20px 0;
+    margin: 0;
+}
+
+h1 {
+    font-size: 4em;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+h1, h2, h3, h4, h5, p, ul, td, th, label {
+    font-family: 'Baloo Tamma 2', cursive;
+    color: #30475E; 
+}
+
+nav > ul {
+    list-style-type: none;
+    text-decoration: none;
+    font-size: 1.5em;
+    margin-right: 50px;
+    font-weight: 500;
+
+}
+
+li {
+    display: inline;
+    margin: 0 10px;
+    font-size: 1.4em;
+}
+
+li:hover {
+    color: #EE6F57;
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    text-decoration: none;
+}
+
+#header-logo {
+    margin: 20px 0 10px 50px;
+}
+
+#logo-first-slash {
+    color: #EE6F57;
+}
+
+hr {
+    margin:0;
+    border: 1px solid #EE6F57;
+}
+
+.welcome-splash {
+    height: 100vh;
+    width: 100%;
+    background-color: #00334E ;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+}
+
+#welcome-logo {
+    color: #F6F5F5;
+    font-size: 10em;
+}
+
+.nav-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 20px;
+}
+
+.section-split {
+    display: flex;
+    justify-content: space-between;
+}
+
+.main-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 50%;
+    margin-left: 15px;
+}
+
+.transaction-top-section {
+    width: 90%;
+    display:  flex;
+    padding: 10px;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+.date-box {
+    padding: 7px 5px;    
+}
+
+.transaction-filter {
+    display: flex;
+}
+
+input, label {
+    display: block;
+}
+
+.table-div {
+    width: 100%;
+}
+
+.date-box {
+    padding: 7px 5px;    
+}
+
+.select-box {
+    padding: 10px;
+    width: 200px;
+}
+
+.first-filter-div {
+    margin: 0 4px 0 0;
+}
+
+.filter-div {
+    margin: 0 4px;
+}
+
+.button {
+    padding: 10px 30px;
+    background-color: #145374;
+    color: #F6F5F5;
+    border-color: #EE6F57;
+    cursor: pointer;
+}
+
+.filter-button-div {
+  display: flex;
+  align-items: flex-end;
+  margin-left: 20px;
+}
+
+.filter-button {
+    height: 55%;
+    width: 100px;
+    padding: 0 15px;
+    margin-bottom: 2px;
+}
+
+.button:hover, .button:focus {
+    color: #F6F5F5;
+    background-color:#EE6F57; 
+}
+
+.transaction-new-button {
+    margin-left: 10px;
+    align-self: flex-end;
+}
+
+table {
+    border: 1px solid #00334E;
+    border-radius: 10px;
+    width: auto;
+}
+
+th, td {
+    padding: 15px;
+    margin: 20px;
+    width: auto;
+    border-bottom: 1px #00334E solid;
+}
+th {
+    font-weight: 500;
+    font-size: 1em;    
+}
+
+.final-row {
+    width: auto;
+    height: 30px;
+}
+
+.summary {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: inherit;
+    width: 50%;
+    margin-top: 0;
+    margin-right: 15px;
+}
+
+.expense-statement {
+    color: #EE6F57;
+    padding: 20px;
+    border: 1px #00334E solid;
+    border-radius: 10px;
+    width: auto;
+    height: auto;
+    text-align: left;
+    margin: 30px 0;
+}
+
+.graph-space {
+    height: 100%;
+    width: 100%;
+    border: 1px black solid;
+    background-color: #EE6F57;
+    border-radius: 10px;
+}
+
+.tag-merchant-table {
+    margin: 40px 0 30px 50px;
+}
+
+.transaction-show-table {
+    margin: 0 0 30px 10px;
+}
+
+.show-split {
+    margin-left: 35px;
+    margin-right: 70px;
+}
+
+.show-header {
+    margin-left: 50px;
+}
+
+.tag-merchant-summary .expense-statement {
+    margin-top: 0;
+}
+
+.tag-merchant-update-form {
+    display: flex;
+    margin-left: 50px;   
+}
+
+.tag-merchant-update-form > label {
+    margin: auto 5px auto 0;
+}
+
+.tag-merchant-update-form > input {
+    margin-right: 5px;
+    width: 250px;
+}
+
+.tran-update-form {
+    display: flex;
+    margin-left: 50px;  
+}
+
+.tran-update-div {
+    margin-right: 5px;
+}
+
+.tran-update-div > input, select {
+    padding: 10px;
+}
+
+#date-input {
+    padding: 7px;
+}
+
+.submit-button-div {
+    display: flex;
+    align-items: flex-end;
+}
+
+.tran-update-form > .button {
+    height: 100%; 
+}
+
+
+
+
+
+/* 
+
+https://colorhunt.co/palette/f6f5f514537400334eee6f57 */
+
+

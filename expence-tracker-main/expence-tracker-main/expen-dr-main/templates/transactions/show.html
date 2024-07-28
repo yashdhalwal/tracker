@@ -1,0 +1,47 @@
+{% extends 'base.html'%}
+{% block content %}
+
+<h1 class="show-header">Transactions on: {{ transaction.date }}</h1>
+<div class="section-split show-split">
+    <section class="main-info">
+        <div class="table-div">
+            <table class="transaction-show-table">
+                <tr>
+                    <th>Date</th>
+                    <th>Amount</th>
+                    <th>Merchant</th>
+                    <th>Tag</th>
+                    <th></th>
+                    <th></th>
+                </tr>
+                {% for daily_transaction in daily_transactions  %}
+                <tr>
+                    <td><a href="/transactions/{{daily_transaction.id}}">{{daily_transaction.date}}</a></td>
+                    <td>£{{transaction.amount}} <a href="/merchants/{{daily_transaction.merchant.id}}"></a></td>
+                    <td><a href="/merchants/{{daily_transaction.merchant.id}}">{{daily_transaction.merchant.name}}</a> </td>
+                    <td><a href="/tags/{{daily_transaction.tag.id}}">{{daily_transaction.tag.name}}</a></td>
+                    <td>
+                        <form action="/transactions/{{transaction.id}}/edit">
+                            <button class="button" type="submit">Update</button>
+                        </form>
+                    </td> 
+                    <td> 
+                        <form action="/transactions/{{daily_transaction.id}}/delete" method="post">
+                            <button class="button" type="submit">Delete</button>
+                        </form>
+                    </td>
+                </tr>   
+                {% endfor %}
+            </table>
+        </div>
+    </section>
+    <section class="tag-merchant-summary summary">
+        <h2 class="expense-statement">Amount Spent: {{total_spent}}</h2>
+    <section class="graph-space">
+    </section>
+</section>
+
+
+
+
+{% endblock %}

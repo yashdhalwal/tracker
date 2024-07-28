@@ -1,0 +1,87 @@
+{% extends 'base.html'%}
+{% block content %}
+<div class="section-split">
+    <section class="main-info">
+        <section class="transaction-top-section">
+            <form class="transaction-filter" action="/transactions/change_date" method="post">
+              
+                <div class="first-filter-div">
+                    <label for="start-date">Start Date</label>
+                    <input type="date" class="date-box" id="start-date" name="start_date" value="{{filter.start_date}}">
+                </div>
+                <div class="filter-div">
+                    <label for="end-date">End Date</label>
+                    <input type="date" class="date-box" id="end-date" name="end_date" value="{{filter.end_date}}">
+                </div>
+                <div class="filter-div">
+                <label for="merchant">Merchant</label>
+                    <select name="merchant" id="transaction-merchant-name" class="select-box">
+                        <option value="">--All--</option>
+                        {% for merchant in all_merchants  %}
+                        {% if filter.merchant_id == merchant.id %}
+                        <option value="{{merchant.id}}" selected>{{merchant.name}}</option>
+                        {% else %}
+                        <option value="{{merchant.id}}">{{merchant.name}}</option>
+                        {% endif %}
+                        {% endfor %}           
+                    </select>
+                </div>
+                <div class="filter-div">
+                <label for="tag">Tag</label>
+                    <select name="tag" id="transaction-tag-name" class="select-box">
+                        <option value="">--All--</option>
+                        {% for tag in all_tags %}
+                        <option value="{{tag.id}}">{{tag.name}}</option>
+                        {% endfor %}
+                    </select>  
+                </div> 
+                <div class="filter-button-div">
+                    <button class="button filter-button" type="submit">Apply</button>
+                </div> 
+            </form>  
+        </section>
+        <div class="table-div">
+            <table>
+                <tr>
+                    <th>Date</th>
+                    <th>Amount</th>
+                    <th>Merchant</th>
+                    <th>Tag</th>
+                    <th colspan="2"> 
+                        <form action="/transactions/new" class="transaction-new-button">
+                            <button class="button" value="submit">Add Transaction</button>
+                        </form>
+                    </th>   
+                </tr>
+                {% for transaction in filtered_transactions  %}
+                <tr>
+                    <td><a href="transactions/{{transaction.id}}">{{transaction.date}}</a></td>
+                    <td>{{transaction.amount_formatted()}} <a href="merchants/{{transaction.merchant.id}}"></a></td>
+                    <td><a href="merchants/{{transaction.merchant.id}}">{{transaction.merchant.name}}</a> </td>
+                    <td><a href="tags/{{transaction.tag.id}}">{{transaction.tag.name}}</a></td>
+                    <td>
+                        <form action="transactions/{{transaction.id}}/edit">
+                            <button class="button" type="submit">Update</button>
+                        </form>
+                    </td>
+                    <td> 
+                        <form action="/transactions/{{transaction.id}}/delete" method="post">
+                            <button class="button" type="submit">Delete</button>
+                        </form>
+                    </td>
+                </tr>   
+                {% endfor %}
+                <tr class="final-row">
+                </tr>
+            </table>
+        </div>
+    </section>
+    <section class="summary">
+        <h2 class="expense-statement">Your total expenditure for this period is: {{total_spent}}</h2>
+        <section class="graph-space">
+        </section>
+    </section>
+</div>
+
+{% endblock %}
+

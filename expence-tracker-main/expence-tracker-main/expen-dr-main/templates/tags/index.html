@@ -1,0 +1,32 @@
+{% extends 'base.html'%}
+
+{% block content %}
+
+
+<table class="tag-merchant-table">
+    <tr>
+        <th>Name</th>
+        <th colspan="2">
+            <form action="tags/new" class="transaction-new-button">
+                <button class="button" value="submit">Add Tag</button>
+            </form>
+        </th>
+    </tr>
+    {% for tag in tags  %} 
+    <tr>
+        <td><a href="/tags/{{tag.id}}">{{ tag.name }}</a></td>
+        <td>
+            <form action="/tags/{{tag.id}}/edit">
+                <button class="button" type="submit">Update</button>
+            </form>
+        </td>
+        <td>
+            <form action="/tags/{{tag.id}}/delete" method="post">
+                <button class="button" type="submit">Delete</button>
+            </form>
+        </td>
+    </tr>
+    {% endfor %}
+    <tr class="final-row"></tr>
+</table>
+{% endblock %}

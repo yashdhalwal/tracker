@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Tamma+2:wght@400;500;600;700&family=Corben&display=swap" rel="stylesheet">
+    
+    
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Expen/dr</title>
+</head>
+<body>
+    <header>
+        <a href="/index"><h1 id="header-logo">Expen<span id="logo-first-slash">/</span>dr</h1></a>
+        <nav class="nav-bar">
+            <ul>
+                <li><a class="nav-links" href="/merchants">Merchants</a></li>
+                <li><a class="nav-links" href="/tags">Tags</a></li>
+                <li><a class="nav-links" href="/transactions">Transactions</a></li>
+            </ul>
+        </nav> 
+    </header>
+   <hr>
+    <section class="main-content">
+        {% block content %}
+
+
+        {% endblock %}
+    </section>
+</body>
+</html>
